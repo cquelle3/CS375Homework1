@@ -10,6 +10,7 @@
 #include <fstream>
 #include <sstream>
 #include <chrono>
+#include <algorithm>
 
 using namespace std;
 
@@ -20,7 +21,7 @@ vector<tuple<string, int, int>> generateSubset(vector<tuple<string, int, int>> v
     string s = bitset<8>(n).to_string();
     reverse(s.begin(), s.end());
     
-    for(int i = 0; i < s.length(); i++){
+    for(int i = 0; i < int(s.length()); i++){
         if(s[i] == '1'){
             ret.push_back(v[i]);
         }
@@ -36,7 +37,7 @@ pair<int, vector<tuple<string, int, int>>> ComputeMaxProfit(vector<tuple<string,
     vector<tuple<string, int, int>> M;
     
     int sumOfI = 0;
-    for(int i = 0; i < I.size(); i++){
+    for(int i = 0; i < int(I.size()); i++){
         sumOfI += get<1>(I[i]);
     }
     
@@ -46,7 +47,7 @@ pair<int, vector<tuple<string, int, int>>> ComputeMaxProfit(vector<tuple<string,
         pair<int, vector<tuple<string, int, int>>> p;
         
         int sumOfIProfit = 0;
-        for(int i = 0; i < I.size(); i++){
+        for(int i = 0; i < int(I.size()); i++){
             sumOfIProfit += get<2>(I[i]);
         }
         
@@ -62,7 +63,7 @@ pair<int, vector<tuple<string, int, int>>> ComputeMaxProfit(vector<tuple<string,
         S = generateSubset(I, count);
         
         int sumOfS = 0;
-        for(int i = 0; i < S.size(); i++){
+        for(int i = 0; i < int(S.size()); i++){
             sumOfS += get<1>(S[i]);
         }
         
@@ -71,7 +72,7 @@ pair<int, vector<tuple<string, int, int>>> ComputeMaxProfit(vector<tuple<string,
             //if the profit of the items in S > maxProfit 
             
             int sumOfSProfit = 0;
-            for(int i = 0; i < S.size(); i++){
+            for(int i = 0; i < int(S.size()); i++){
                 sumOfSProfit += get<2>(S[i]);
             }
             
@@ -153,7 +154,7 @@ int main(int argc, char *argv[]) {
         }
         else{
             int profit;
-            for(int i = 0; i < profitPrices.size(); i++){
+            for(int i = 0; i < int(profitPrices.size()); i++){
                 if(profitPrices[i].first == s1){
                     profit = profitPrices[i].second;
                     break;
