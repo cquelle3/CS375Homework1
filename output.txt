@@ -1,2 +1,6 @@
-2 3000 2 3.464e-06
-3 1300 2 6.578e-05
+2 3000 2 2.795e-06
+JimRice1975
+RickyHenderson1983
+3 1300 2 3.7373e-05
+DerekJeter1996
+JimRice1975

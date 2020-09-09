@@ -146,6 +146,9 @@ int main(int argc, char *argv[]) {
                 chrono::duration<double> time_needed = end - start;
                 
                 cout << input.size() << " " << result.first << " " << result.second.size() << " " << time_needed.count() << endl;
+                for(int i = 0; i < int(result.second.size()); i++){
+                    cout << get<0>(result.second[i]) << endl;
+                }
             }
             
             count = stoi(s1);
@@ -172,4 +175,7 @@ int main(int argc, char *argv[]) {
     chrono::duration<double> time_needed = end - start;
     
     cout << input.size() << " " << result.first << " " << result.second.size() << " " << time_needed.count() << endl;
+    for(int i = 0; i < int(result.second.size()); i++){
+        cout << get<0>(result.second[i]) << endl;
+    }
 }
