@@ -1,6 +1,6 @@
-2 3000 2 2.528e-06
+2 3000 2 3.232e-06
 JimRice1975
 RickyHenderson1983
-3 1300 2 3.8071e-05
+3 1300 2 5.1457e-05
 DerekJeter1996
 JimRice1975
