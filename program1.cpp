@@ -114,6 +114,7 @@ int main(int argc, char *argv[]) {
     int weight;
     
     ofstream output("output.txt");
+    streambuf* cout_buf = cout.rdbuf(); 
     cout.rdbuf(output.rdbuf());
     
     while(getline(infile1, line)){
@@ -162,6 +163,15 @@ int main(int argc, char *argv[]) {
                     profit = profitPrices[i].second;
                     break;
                 }
+                else{
+                    profit = -1;
+                }
+            }
+            
+            if(profit == -1){
+                cout.rdbuf(cout_buf);
+                cout << "There is no " << s1 << " " << "in market price file." << endl;
+                exit(0);
             }
             
             input.push_back(make_tuple(s1, stoi(s2), profit));
@@ -178,4 +188,6 @@ int main(int argc, char *argv[]) {
     for(int i = 0; i < int(result.second.size()); i++){
         cout << get<0>(result.second[i]) << endl;
     }
+    
+    return 0;
 }
